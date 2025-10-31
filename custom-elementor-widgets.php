@@ -3,7 +3,7 @@
  * Plugin Name: Custom Elementor Widgets
  * Description: Custom Elementor widgets including Achievements Gallery, Carousel Slider, Testimonials Marquee and more
  * Version: 1.0.1
- * Author: Your Name
+ * Author: Ateeb Azhar
  * Text Domain: custom-elementor-widgets
  * Elementor tested up to: 3.21.0
  */
