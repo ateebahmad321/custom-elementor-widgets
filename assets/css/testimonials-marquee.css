@@ -1,0 +1,265 @@
+/**
+ * Testimonials Marquee Styles
+ * Path: /assets/css/testimonials-marquee.css
+ */
+
+.testimonials-marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.testimonials-marquee-container {
+    width: 100%;
+}
+
+/* Gradient overlays */
+.testimonials-marquee-wrapper::before,
+.testimonials-marquee-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    height: 100%;
+    width: 8rem;
+    pointer-events: none;
+}
+
+.testimonials-marquee-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, var(--background-color, #ffffff), transparent);
+}
+
+.testimonials-marquee-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, var(--background-color, #ffffff), transparent);
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    border: 1px solid rgba(0, 5, 61, 0.1);
+    background: rgba(0, 5, 61, 0.01);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    background: rgba(0, 5, 61, 0.05);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .testimonial-card {
+        border-color: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.10);
+    }
+    
+    .testimonial-card:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+    
+    .testimonials-marquee-wrapper::before {
+        background: linear-gradient(to right, #000000, transparent);
+    }
+    
+    .testimonials-marquee-wrapper::after {
+        background: linear-gradient(to left, #000000, transparent);
+    }
+}
+
+/* Marquee Animation - THIS IS THE KEY! */
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+
+.animate-marquee {
+    animation: marquee var(--duration, 60s) linear infinite;
+    will-change: transform;
+}
+
+/* Animation direction reverse */
+.animate-marquee[style*="animation-direction:reverse"],
+.\[animation-direction\:reverse\] .animate-marquee {
+    animation-direction: reverse;
+}
+
+/* Pause on hover */
+.group:hover .group-hover\:\[animation-play-state\:paused\] {
+    animation-play-state: paused !important;
+}
+
+/* Row spacing */
+.mt-4 {
+    margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonials-marquee-wrapper::before,
+    .testimonials-marquee-wrapper::after {
+        width: 4rem;
+    }
+    
+    .testimonial-card {
+        max-width: 20rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-marquee-wrapper::before,
+    .testimonials-marquee-wrapper::after {
+        width: 2rem;
+    }
+    
+    .testimonial-card {
+        max-width: 16rem !important;
+    }
+}
+
+/* Utility Classes (Tailwind-like) */
+.flex {
+    display: flex;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.gap-1 {
+    gap: 0.25rem;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}
+
+.gap-3 {
+    gap: 0.75rem;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+.relative {
+    position: relative;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.rounded-xl {
+    border-radius: 0.75rem;
+}
+
+.rounded-sm {
+    border-radius: 0.125rem;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.border {
+    border-width: 1px;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.leading-relaxed {
+    line-height: 1.625;
+}
+
+.h-3 {
+    height: 0.75rem;
+}
+
+.w-3 {
+    width: 0.75rem;
+}
+
+.h-8 {
+    height: 2rem;
+}
+
+.w-8 {
+    width: 2rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.bg-gradient-to-br {
+    background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.from-purple-400 {
+    --tw-gradient-from: #c084fc;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(192, 132, 252, 0));
+}
+
+.to-purple-600 {
+    --tw-gradient-to: #9333ea;
+}
+
+.text-white {
+    color: #ffffff;
+}

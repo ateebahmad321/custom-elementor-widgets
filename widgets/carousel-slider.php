@@ -339,4 +339,4 @@ class Custom_Elementor_Carousel_Slider extends \Elementor\Widget_Base {
         </div>
         <?php
     }
-}s
+}
